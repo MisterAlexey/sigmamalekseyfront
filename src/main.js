@@ -13,7 +13,7 @@ class Main extends React.Component{
         
       }
     componentDidMount(){
-        fetch("http://localhost:3000/users")
+        fetch("https://sigmamalekseybackend.herokuapp.com/users")
         .then(response => response.json())
         .then(data => {
             console.log(data)
