@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Login from './login' 
-// import Regist from './registr' 
+import Login from './login' 
+import Regist from './registr' 
 // import Profile from './profile'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Main from './main';
@@ -23,6 +23,8 @@ class App extends Component {
             <div>
               <Route path="/" exact component={Main} />
               <Route path="/item" exact component={Item} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/reg" exact component={Regist} />
             </div>
           </Router>
     );

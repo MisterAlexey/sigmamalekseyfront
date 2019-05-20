@@ -1,12 +1,14 @@
 import React from 'react';
-
+import {Redirect} from "react-router-dom"
+import {Link} from "react-router-dom"
 
 class Login extends React.Component{
     constructor(props){
         super(props)
         this.state = {
            login: "",
-           password: ''
+           password: '',
+           auth: false 
         }
         this.go_enter =  this.go_enter.bind(this)
         this.onChange = this.onChange.bind(this)
@@ -37,6 +39,9 @@ class Login extends React.Component{
                         })
     }
     render(){
+        if(this.state.auth){
+              return <Redirect to={this.state.to} />
+          }
         return(
             <div className="login_data">
             <h1>Enter login and password</h1>
@@ -46,7 +51,15 @@ class Login extends React.Component{
             <input name="password" onChange={this.onChange} placeholder="Enter password" type="password"/> 
             <br />   
             <button onClick={this.go_enter}>Enter</button>
-            <a  onClick={() =>{this.props.go('reg')}} href='#'>Регистрация</a>
+            <Link
+                to={{pathname: "/reg"}}>
+                Зарегистрироваться
+            </Link>
+            <br />
+            <Link
+                to={{pathname: "/"}}>
+                Вернуться обратно
+            </Link>
             </div>
         )
     }
