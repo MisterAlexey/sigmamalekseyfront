@@ -13,7 +13,7 @@ class Item extends React.Component{
     
       componentDidMount(){
           console.log(this.props.location.id)
-        fetch("http://localhost:3000/get_girl?_id="+this.props.location.id)
+        fetch("https://sigmamalekseybackend.herokuapp.com/get_girl?_id="+this.props.location.id)
         .then(response => response.json())
         .then(data => {
             // console.log(data)
