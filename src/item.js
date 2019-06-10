@@ -13,7 +13,7 @@ class Item extends React.Component{
     
       componentDidMount(){
           console.log(this.props.location.id)
-        fetch("https://sigmamalekseybackend.herokuapp.com/get_girl?_id="+this.props.location.id)
+        fetch("https://sigmamalekseybackend.herokuapp.com/get_worker?_id="+this.props.location.id)
         .then(response => response.json())
         .then(data => {
             // console.log(data)
@@ -31,7 +31,7 @@ class Item extends React.Component{
                     this.state.users &&
                     <div>
                         <h1>{this.state.users.login}</h1>
-                        <h5>{this.state.users.age} лет</h5>
+                        <h5>{this.state.users.stage} Стаж</h5>
                         <Link
                              to={{pathname: "/"}}>
                             Вернуться обратно

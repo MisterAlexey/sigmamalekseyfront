@@ -44,7 +44,7 @@ class Main extends React.Component{
                     login={user.login}
                     age={user.age}
                     price_hour={user.price_hour}
-                    price_night={user.price_night}
+                    price_day={user.price_day}
                     id={user._id}
                 />
                 )
